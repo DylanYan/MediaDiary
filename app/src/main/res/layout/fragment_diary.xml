@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+        <TextView
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标题"/>
+        <EditText
+            android:id="@+id/diary_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入标题"/>
+        <Button
+            android:id="@+id/diary_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/diary_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入日记内容"/>
+        <Button
+            android:id="@+id/add_voice_diary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="语音输入"/>
+        <ImageView
+            android:id="@+id/diary_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:cropToPadding="true"
+            android:background="@android:color/darker_gray"/>
+        <ImageButton
+            android:id="@+id/diary_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_camera"/>
+    </LinearLayout>
+</ScrollView>

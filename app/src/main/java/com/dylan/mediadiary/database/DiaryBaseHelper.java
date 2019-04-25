@@ -1,0 +1,33 @@
+package com.dylan.mediadiary.database;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import com.dylan.mediadiary.database.DiaryDbSchema.DiaryTable;
+
+public class DiaryBaseHelper extends SQLiteOpenHelper {
+    public static final int VERSION = 1;
+    public static final String DATABASE_NAME = "diaryBase.db";
+
+    public DiaryBaseHelper (Context context) {
+        super(context, DATABASE_NAME, null, VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL("create table " + DiaryTable.NAME + "(" +
+            " _id integer primary key autoincrement, " +
+            DiaryTable.Cols.UUID + ", " +
+            DiaryTable.Cols.TITLE + ", " +
+            DiaryTable.Cols.DATE + ", " +
+            DiaryTable.Cols.CONTENT +
+            ")"
+        );
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+
+    }
+}
